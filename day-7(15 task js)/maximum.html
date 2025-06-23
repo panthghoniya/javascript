@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <input type="text" id="a" />
+    <input type="text" id="b" />
+    <input type="text" id="c" />
+    <button onclick="maxmimumvalue()">click for finding maxmimum value</button>
+    <h1 id="bbb"></h1>
+  </head>
+  <body>
+    <script>
+
+        let shirt = document.getElementById("bbb")
+      function maxmimumvalue() {
+        let van = document.getElementById("a").value
+        let can = document.getElementById("b").value
+        let fan = document.getElementById("c").value
+
+        if (a > b) {
+          if (a > c) {
+            shirt.innerText = ` ${van} is maximum`;
+          } else {
+            shirt.innerText = ` ${fan} is maximum`;
+          }
+        } else {
+          if (b > c) {
+            shirt.innerText = ` ${can} is maximum`;
+          } else {
+            shirt.innerText = ` ${fan} is maximum`;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

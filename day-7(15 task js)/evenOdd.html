@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a">
+    <button onclick="evenOdd()">click to check its odd or even</button>
+    <h1 id="book"></h1>
+</body>
+  <script>
+        let mac = document.getElementById("book")
+        function evenOdd(){
+            let penne = document.getElementById("a").value
+
+            if(penne%2 == 0){
+               mac.innerText = `${penne} = Even`
+            }
+            else{
+                mac.innerText = `${penne} = Odd`
+            }
+        }
+  </script>
+</html>
+

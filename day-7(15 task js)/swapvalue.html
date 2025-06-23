@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a">
+    <input type="text" id="b">
+    <button onclick="swapvlaues()">click to swap values</button>
+
+    <h1 id="butter"></h1>
+    <h1 id="bread"></h1>
+
+</body>
+<script>
+   
+    let frog = document.getElementById("butter")
+    let frock = document.getElementById("bread")
+    function swapvalues(){
+         let m = document.getElementById("a").value
+         let n = document.getElementById("b").value
+
+         let met = document.getElementById("a")
+         let neet = document.getElementById("b")
+
+         let p
+         p = a
+         a = b
+         b = p
+
+         frog.innerText = `A = ${+a}`
+         frock.innerText = `B = ${+b} `
+
+         met.value = ""
+         neet.value = ""
+ }
+</script>
+</html>

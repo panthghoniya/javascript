@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="" id="a" />
+    <button onclick="swa()">click</button>
+    <h1 id="aa"></h1>
+  </body>
+
+  <script>
+    function swa() {
+      var a = document.getElementById("a").value;
+      var reversed = "";
+      var i;
+      for (i = a.length - 1; i >= 0; i--) {
+        reversed = reversed + a[i];
+      }
+      document.getElementById("aa").innerText = reversed;
+    }
+  </script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="a" />
+    <button onclick="factorial()">Calculate Factorial</button>
+    <h1 id="cosmo"></h1>
+  </body>
+  <script>
+    let cosmo = document.getElementById("cosmo");
+    function factorial() {
+      let a = document.getElementById("a").value;
+        let dd = 1
+
+      if (a < 0 || a <= 1) {
+        cosmo.innerText = `This is not a valid factorial number.`;
+      } 
+      else {
+        for (let i = 1; i <= a; i++) {
+            dd = dd * i;
+        }
+        cosmo.innerText = `The factorial is ${dd}`;
+      }
+    }
+  </script>
+</html>
