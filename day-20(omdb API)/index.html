@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" alt="" id="img">
+    
+</body>
+    <script>
+        
+        fetch("http://www.omdbapi.com/?i=tt3896198&apikey=fd8099b8")
+        .then((req)=> req.json())
+        .then((res) => {
+            let img = document.getElementById("img")
+            img.setAttribute("src",res.Poster)
+             
+        })
+    </script>
+</html>

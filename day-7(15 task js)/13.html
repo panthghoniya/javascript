@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sort Array Ascending (No sort())</title>
+</head>
+<body>
+  <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+  <button onclick="sortArray()">Sort</button>
+  <div id="result"></div>
+
+  <script>
+    function sortArrayAscending(arr) {
+      // Simple bubble sort
+      for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - 1 - i; j++) {
+          if (arr[j] > arr[j + 1]) {
+            let temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
+        }
+      }
+      return arr;
+    }
+
+    function sortArray() {
+      const input = document.getElementById("arrayInput").value;
+      if (!input.trim()) {
+        document.getElementById("result").innerText = "Please enter numbers.";
+        return;
+      }
+      let arr = input.split(",").map(Number);
+      if (arr.some(isNaN)) {
+        document.getElementById("result").innerText = "Invalid input. Please enter numbers only.";
+        return;
+      }
+      const sorted = sortArrayAscending(arr);
+      document.getElementById("result").innerText = "Sorted Array: " + sorted.join(", ");
+      document.getElementById("arrayInput").value = "";
+    }
+  </script>
+</body>
+</html>

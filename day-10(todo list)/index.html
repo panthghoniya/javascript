@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stylish To-Do List (Dark Mode)</title>
+    <style>
+      body {
+        background: #0f0f0f;
+        color: #fff;
+        font-family: "Segoe UI", sans-serif;
+        display: flex;
+        justify-content: center;
+        padding: 50px;
+      }
+
+      .todo-container {
+        background: #1a1a1a;
+        padding: 30px;
+        border-radius: 16px;
+        width: 400px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #00ffcc;
+      }
+
+      .input-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+      }
+
+      .input-group input {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #2a2a2a;
+        color: white;
+        font-size: 16px;
+      }
+
+      .input-group button {
+        padding: 12px 16px;
+        background: #00cc99;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .input-group button:hover {
+        background-color: #4affd2;
+      }
+
+      .task-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .task-item {
+        background: #222;
+        padding: 14px;
+        border-radius: 10px;
+
+        transition: 0.3s;
+      }
+      .dd {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .task-item:hover {
+        background: #2e2e2e;
+      }
+
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1;
+      }
+
+      .task-number {
+        font-weight: bold;
+        color: #00ffcc;
+        min-width: 20px;
+      }
+
+      .task-text {
+        font-size: 16px;
+        color: #eee;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn {
+        background: #000000;
+        border: none;
+        color: #aaa;
+        padding: 6px 8px;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      .btn:hover {
+        color: #00ffcc;
+      }
+      #pp {
+        margin-top: 10px;
+        display: none; /* Hidden by default; toggle it when editing */
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      #pp input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        background: #2a2a2a;
+        color: #fff;
+        font-size: 15px;
+        outline: none;
+      }
+
+      #pp button {
+        padding: 10px 14px;
+        background: #00cc99;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      #pp button:hover {
+        background-color: #4affd2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="todo-container">
+      <h2>📝 My To-Do List</h2>
+      <div class="input-group">
+        <input type="text" placeholder="Add a new task..." id="aa" />
+        <button onclick="button()">Add</button>
+      </div>
+      <div class="task-list" id="bb"></div>
+    </div>
+
+    <script>
+      let box = -1;
+      function button() {
+        box++;
+
+        let aa = document.getElementById("aa").value;
+        let bb = document.getElementById("bb");
+
+        bb.innerHTML += `
+      <div class="task-item">
+        <div class="dd">
+        <div class="left">
+          <div class="task-number">${box}</div>
+          <div class="task-text">${aa}</div>
+        </div> 
+        <div class="actions">
+          <button class="btn" onclick="adtodo()">✏️</button>
+          <button class="btn" onclick="deletetodo('${box}')">🗑️</button>
+        </div>
+      </div>
+      <div id="ll">
+     
+      </div>
+      </div>
+      
+       
+      `;
+      }
+      function deletetodo(val) {
+        let bhai = document.getElementsByClassName("task-item");
+        bhai[val].remove();
+      }
+      function adtodo() {
+        let ll = document.getElementById("ll");
+        ll.innerHTML = ` <div id="pp">
+      <input type="text" name="" placeholder="Add a new task..." id="hh">
+      <button onclick="changetodo()">change</button>
+      </div>`;
+      }
+      function changetodo() {
+        let hh = document.getElementById("hh").value;
+        let col = document.getElementsByClassName("task-text");
+        col[box].innerHTML = `${hh}`;
+        let pp = document.getElementById("pp");
+        pp.innerHTML = ``; 
+        pp.style.display = "none";
+      }
+     let boy = document.getElementById("")
+    </script>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #000000, #6a3093);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .login-container {
+      background: rgba(255,255,255,0.15);
+      padding: 32px 24px 24px 24px;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+      width: 320px;
+      backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255,255,255,0.18);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 22px;
+      color: #fff;
+      letter-spacing: 1px;
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.25);
+      color: #fff;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      outline: none;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .login-container input[type="email"]::placeholder,
+    .login-container input[type="password"]::placeholder {
+      color: #e0e0e0;
+      opacity: 1;
+    }
+
+    .login-container input[type="email"]:focus,
+    .login-container input[type="password"]:focus {
+      background: rgba(255,255,255,0.35);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+
+    .login-container .forgot-password,
+    .login-container .back-to-login {
+      text-align: right;
+      margin-bottom: 15px;
+    }
+
+    .login-container .forgot-password a,
+    .login-container .back-to-login a {
+      font-size: 0.95em;
+      color: #b3e0ff;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .login-container .forgot-password a:hover,
+    .login-container .back-to-login a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 1.05rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .login-container button:hover {
+      background: linear-gradient(90deg, #182848 0%, #4b6cb7 100%);
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    @media (max-width: 500px) {
+      .login-container {
+        padding: 18px 8px 16px 8px;
+        border-radius: 12px;
+        width: 95%;
+      }
+      .login-container h2 {
+        font-size: 1.2rem;
+      }
+      .login-container button {
+        font-size: 0.98rem;
+        padding: 10px;
+      }
+      .login-container input[type="email"],
+      .login-container input[type="password"] {
+        font-size: 0.98rem;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div id="main">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <div class="forgot-password">
+          <a href="#" id="forgot-link">Forgot Password?</a>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    // Show forgot password form
+    document.addEventListener("DOMContentLoaded", function() {
+      const main = document.getElementById("main");
+      document.getElementById("forgot-link").onclick = function(e) {
+        e.preventDefault();
+        main.innerHTML = `
+          <h2>Reset Password</h2>
+          <form id="forgot-form">
+            <input type="email" placeholder="Enter your email" required>
+            <div class="back-to-login">
+              <a href="#" id="back-link">Back to Login</a>
+            </div>
+            <button type="submit">Send Reset Link</button>
+          </form>
+        `;
+        // Back to Login event
+        document.getElementById("back-link").onclick = function(ev) {
+          ev.preventDefault();
+          main.innerHTML = `
+            <h2>Login</h2>
+            <form id="login-form">
+              <input type="email" placeholder="Email" required>
+              <input type="password" placeholder="Password" required>
+              <div class="forgot-password">
+                <a href="#" id="forgot-link">Forgot Password?</a>
+              </div>
+              <button type="submit" >Login</button>
+            </form>
+          `;
+          // Re-attach forgot password event
+          document.getElementById("forgot-link").onclick = arguments.callee.caller;
+        };
+      };
+    });
+  </script>
+</body>
+</html>

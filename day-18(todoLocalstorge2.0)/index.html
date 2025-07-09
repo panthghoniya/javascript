@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="" id="input" />
+    <button onclick="add()">add</button>
+    <ul id="book"></ul>
+  </body>
+  <script>
+    let array = []; // panth , palak
+
+    function add() {
+      let input = document.getElementById("input").value;
+      let input2 = document.getElementById("input");
+      let book = document.getElementById("book");
+
+      if(array.length == 0){
+        array.push(input)
+      }
+      else{
+      array.push(array.length);
+
+      }
+
+      localStorage.setItem("userliset", JSON.stringify(array));
+
+      book.innerHTML += `
+        <li>${input}</li>
+        `;
+
+      input2.value = " ";
+    }
+
+    let palak = JSON.parse(localStorage.getItem("userliset"));
+
+    palak.forEach((p) => {
+      let book = document.getElementById("book");
+
+      book.innerHTML += `
+        <li>${p}</li>
+        `;
+    });
+    
+  </script>
+</html>

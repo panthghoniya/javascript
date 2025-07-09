@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Static Calculator</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .calculator {
+      background: #222;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      width: 300px;
+    }
+
+    .display {
+      background: #000;
+      color: #0f0;
+      font-size: 2em;
+      padding: 20px;
+      text-align: right;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      height: 60px;
+      overflow: hidden;
+    }
+    .displaya {
+      background: #000;
+      color: #0f0;
+      font-size: 2em;
+      padding: 5px;
+      text-align: right;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      height: 40px;
+      overflow: hidden;
+    }
+    #disp{
+      color: rgb(147, 147, 147);
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .btn {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .btn:active {
+      background: #444;
+    }
+
+    .btn.operator {
+      background-color: #ff9500;
+    }
+
+    .btn.equal {
+      background-color: #34c759;
+      grid-column: span 2;
+    }
+
+    .btn.zero {
+      grid-column: span 2;
+    }
+  </style>
+
+ 
+</head>
+<body>
+  <div class="calculator" >
+    <div class="display" id="dis"></div>
+    <div class="displaya" id="disp"></div>
+    <div class="buttons">
+      <div class="btn" onclick="clearval()">C</div>
+      <div class="btn">±</div>
+      <div class="btn" onclick="displayval('%')">%</div>
+      <div class="btn operator" onclick="displayval('/')">÷</div>
+
+      <div class="btn" onclick="displayval('7')">7</div>
+      <div class="btn" onclick="displayval('8')">8</div>
+      <div class="btn" onclick="displayval('9')">9</div>
+      <div class="btn operator" onclick="displayval('*')">×</div>
+
+      <div class="btn" onclick="displayval('4')">4</div>
+      <div class="btn" onclick="displayval('5')">5</div>
+      <div class="btn" onclick="displayval('6')">6</div>
+      <div class="btn operator" onclick="displayval('-')">−</div>
+
+      <div class="btn" onclick="displayval('1')">1</div>
+      <div class="btn" onclick="displayval('2')">2</div>
+      <div class="btn" onclick="displayval('3')">3</div>
+      <div class="btn operator" onclick="displayval('+')">+</div>
+
+      <div class="btn zero" onclick="displayval('0')">0</div>
+      <div class="btn" onclick="displayval('.')">.</div>
+      <div class="btn equal" onclick="value()">=</div>
+    </div>
+  </div>
+  <script>
+    let dis = document.getElementById("dis");
+
+    function displayval(val){
+      document.getElementById("dis").innerHTML += val // 23+2
+    }
+    function clearval(){
+      document.getElementById("dis").innerText = ""
+    }
+    function value(){
+      document.getElementById("disp").innerText = eval(document.getElementById("dis").innerText)
+    }
+  </script>
+</body>
+</html>

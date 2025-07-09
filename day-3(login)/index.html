@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #000000, #6a3093);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.18);
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 28px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 95%;
+  max-width: 410px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+}
+
+.login-form h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  font-size: 1.05rem;
+  background-color: rgba(255, 255, 255, 0.28);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.input-group input::placeholder {
+  color: #e0e0e0;
+  opacity: 1;
+}
+
+.input-group input:focus {
+  background-color: rgba(255,255,255,0.38);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+.forgot {
+  display: block;
+  text-align: right;
+  margin-bottom: 1.2rem;
+  color: #b3e0ff;
+  text-decoration: none;
+  font-size: 0.97rem;
+  transition: color 0.2s;
+}
+
+.forgot:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.08rem;
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-btn:hover {
+  background: linear-gradient(90deg, #182848 0%, #4b6cb7 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .login-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .login-btn {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+
+  .input-group input {
+    font-size: 1rem;
+    padding: 0.9rem 1rem;
+  }
+}
+</style>
+<body>
+  <div class="container">
+    <form class="login-form">
+      <h2>Login Form</h2>
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Email" required />
+      </div>
+      <div class="input-group">
+        <input type="password" placeholder="Password" required />
+      </div>
+      <a href="#" class="forgot">Forgot Password?</a>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+  </div>
+</body>
+</html>

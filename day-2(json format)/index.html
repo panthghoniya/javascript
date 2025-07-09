@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Exile&family=Gantari:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Vinyl&family=Unbounded:wght@200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <style>
+
+    #container{
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+    }
+     #container div {
+        width: 32%;
+        height: 550px;
+      border: 4px solid rgb(255, 0, 212);
+      margin-top: 20px;
+      border-radius: 25px;
+      overflow: hidden;
+     
+     }
+    #container div img {
+      width: 100%;
+      height: 60%;
+    }
+    #container div h1{
+          font-family: "Exile", system-ui;
+          color: rgb(238, 100, 123);
+          padding-left: 4%;
+    }
+    #container div p{
+          font-family: "Poppins", sans-serif;
+          font-size: 12px;
+          padding-left: 4%;
+    }
+  </style>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+    let x = document.getElementById("container");
+
+    let Array = [
+      {
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCUNZI6580cUumv1yzbKTDCQWo7M5afdStEw&s",
+        name: "car 1",
+        bio: "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, placeat nihil <br> omnis nisi quibusdam laudantium dolorum illum ut reiciendis esse, ex labore <br>  molestias incidunt libero inventore quia eius excepturi natus.",
+        price: "RS.2499",
+      },
+      {
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa7_0dQ7hu9Wp1Eod8v45qFa5kIe3fGK7xEw&s",
+        name: "car 2", 
+        bio:"  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, placeat nihil <br> omnis nisi quibusdam laudantium dolorum illum ut reiciendis esse, ex labore <br>  molestias incidunt libero inventore quia eius excepturi natus.",
+        price: "RS.1679",
+      },
+      {
+        img: "https://imgix.bustle.com/fatherly/2019/05/best-hotwheels.jpg?w=374&h=203&fit=crop&crop=faces&dpr=2",
+        name: " pink bouquet Flowers",
+        bio: "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, placeat nihil <br> omnis nisi quibusdam laudantium dolorum illum ut reiciendis esse, ex labore <br>  molestias incidunt libero inventore quia eius excepturi natus.",
+        price: "RS.3499",
+      },
+      {
+        img: "https://images.mattel.net/image/upload/w_360,f_auto,c_scale/shop-contentstack/blt68f5e21fceac0a0a/6761b2e1fbbc1d3944097858/HW_5_Die-Cast.png",
+        name: "bouquet Flowers",
+        bio: "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, placeat nihil <br> omnis nisi quibusdam laudantium dolorum illum ut reiciendis esse, ex labore <br>  molestias incidunt libero inventore quia eius excepturi natus.",
+        price: "RS.2499",
+      },
+      {
+        img: "https://imgd.aeplcdn.com/0x0/ec/95/1C/13268/img/l/Hot-wheels-car-27130.jpg?q=75",
+        name: " Red bouquet Flowers",
+        bio:"  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, placeat nihil <br> omnis nisi quibusdam laudantium dolorum illum ut reiciendis esse, ex labore <br>  molestias incidunt libero inventore quia eius excepturi natus.",
+        price: "RS.1679",
+      },
+      {
+        img: "https://imgd.aeplcdn.com/0x0/ec/95/1C/13268/img/l/Hot-wheels-car-27130.jpg?q=75",
+        name: " pink bouquet Flowers",
+        bio: "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, placeat nihil <br> omnis nisi quibusdam laudantium dolorum illum ut reiciendis esse, ex labore <br>  molestias incidunt libero inventore quia eius excepturi natus.",
+        price: "RS.3499",
+      },
+      {
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaBnXeAdv_A6OZ-zlm0UJnNy7K_dYAgP5mOA&s",
+        name: "bouquet Flowers",
+        bio: "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, placeat nihil <br> omnis nisi quibusdam laudantium dolorum illum ut reiciendis esse, ex labore <br>  molestias incidunt libero inventore quia eius excepturi natus.",
+        price: "RS.2499",
+      },
+      {
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4s5GDurgaw2LwaCIiwE6ZxNi40v0rIvWPqg&s",
+        name: " Red bouquet Flowers",
+        bio:"  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, placeat nihil <br> omnis nisi quibusdam laudantium dolorum illum ut reiciendis esse, ex labore <br>  molestias incidunt libero inventore quia eius excepturi natus.",
+        price: "RS.1679",
+      },
+      {
+        img: "https://cdn.zeptonow.com/production/ik-seo/tr:w-640,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/035fe19c-d3fb-442c-9d74-f9443f18c2b3/Mattel-Hot-Wheels-5-Car-Pack-Collector-s-Dream-for-Kids-Ages-3-.jpg",
+        name: " pink bouquet Flowers",
+        bio: "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, placeat nihil <br> omnis nisi quibusdam laudantium dolorum illum ut reiciendis esse, ex labore <br>  molestias incidunt libero inventore quia eius excepturi natus.",
+        price: "RS.3499",
+      },
+      {
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxykfBWF7Fe_RP3zLv0b4AHddxSht3PMZ9aA&s",
+        name: " pink bouquet Flowers",
+        bio: "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, placeat nihil <br> omnis nisi quibusdam laudantium dolorum illum ut reiciendis esse, ex labore <br>  molestias incidunt libero inventore quia eius excepturi natus.",
+        price: "RS.3499",
+      },
+    ];
+
+    for (let i = 0; i <= 9; i++) {
+      let y = document.createElement("div");
+      y.innerHTML = `
+     <img src="${Array[i].img}">
+     <h1>${Array[i].name}</h1>
+     <p>${Array[i].bio}</p>
+     <p>${Array[i].price}</p>
+     `;
+      x.append(y);
+    }
+  </script>
+</html>

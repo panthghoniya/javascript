@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #1c1c1c;
+        color: #fff;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #ff3c38;
+      }
+
+      #inp {
+        width: 100%;
+        max-width: 600px;
+        padding: 15px 20px;
+        font-size: 16px;
+        border-radius: 30px;
+        border: none;
+        outline: none;
+        margin: 0 auto;
+        display: block;
+        box-shadow: 0 0 10px rgba(255, 60, 56, 0.4);
+      }
+
+      /* 🌟 New Styling for #amanthi */
+      #amanthi {
+        margin-top: 20px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        background-color: #2a2a2a;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      }
+
+      #amanthi p {
+        margin: 5px 0;
+        color: #ccc;
+        font-size: 15px;
+        border-bottom: 1px solid #3a3a3a;
+        padding-bottom: 5px;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .box {
+        background-color: #2e2e2e;
+        border-radius: 15px;
+        overflow: hidden;
+        width: 220px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      .box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(255, 60, 56, 0.4);
+      }
+
+      .box-up img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .box-dun {
+        padding: 15px;
+      }
+
+      .box-dun p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .box-dun p:first-child {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ff3c38;
+      }
+
+      .no-results {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 18px;
+        color: #ccc;
+      }
+
+      @media (max-width: 600px) {
+        #inp {
+          width: 90%;
+        }
+
+        .box {
+          width: 90%;
+        }
+
+        #amanthi {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🎬 Movie Search</h1>
+      <input
+        type="text"
+        id="inp"
+        placeholder="Search for movies..."
+        oninput="searchMovies()"
+      />
+      <div id="amanthi"></div>
+    </header>
+
+    <div class="container"></div>
+
+    <script>
+      function searchMovies() {
+        let query = document.getElementById("inp").value.trim();
+
+        fetch(`https://www.omdbapi.com/?s=${query}&apikey=fd8099b8`)
+          .then((res) => res.json())
+          .then((data) => {
+            const amanthi = document.getElementById("amanthi");
+            const container = document.querySelector(".container");
+
+            // Clear previous content
+            amanthi.innerHTML = "";
+            container.innerHTML = "";
+
+            if (data.Search) {
+              // Titles in #amanthi
+              data.Search.forEach((e) => {
+                amanthi.innerHTML += `<p>${e.Title}</p>`;
+              });
+
+              // Cards in container
+              data.Search.forEach((movie) => {
+                container.innerHTML += `
+                  <div class="box">
+                    <div class="box-up">
+                      <img src="${
+                        movie.Poster !== "N/A"
+                          ? movie.Poster
+                          : "https://via.placeholder.com/220x320?text=No+Image"
+                      }" alt="Poster">
+                    </div>
+                    <div class="box-dun">
+                      <p>${movie.Title}</p>
+                      <p>Type: ${movie.Type}</p>
+                      <p>Year: ${movie.Year}</p>
+                    </div>
+                  </div>
+                `;
+              });
+            } else {
+              container.innerHTML = `<div class="no-results">No results found. Try another search!</div>`;
+              amanthi.innerHTML = `<p style="text-align:center;">No titles to show</p>`;
+            }
+          });
+      }
+    </script>
+  </body>
+</html>

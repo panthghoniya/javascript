@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0%;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    .box {
+      width: 300%;
+      height: 500px;
+    }
+    img {
+      width: 29%;
+      height: 100%;
+      padding-left: 200px;
+    }
+    #button1 {
+      padding-inline: 40px;
+      padding-block: 10px;
+      text-transform: uppercase;
+      border: 1px solid black;
+
+    }
+/*#button2 {
+      background-color: rgb(250, 5, 5);
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      position: absolute;
+      top: 300px;
+      left: 1250px;
+    } */
+     .boss{
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+      
+     }
+  </style>
+  <body>
+   
+    <div class="box">
+      <img
+        src="https://imgs.search.brave.com/Evan1HoL9kmeSePRsRKL8CUb__YHkuNWZSYnf7--WVU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1nYWNhZGVteS5j/b20vc2l0ZXMvZGVm/YXVsdC9maWxlcy9p/bWctYnMtZm9vdGJh/bGwtdG9wLTI1Lmpw/Zw"
+        alt=""
+        class="slider"
+      />
+      <img
+        src="https://imgs.search.brave.com/eHg7g5N4LA9SYuMKXwcimXP7OBUhd9lV8gULyw8jQpY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1nYWNhZGVteS5j/b20vc2l0ZXMvZGVm/YXVsdC9maWxlcy9p/bWctYWNhZGVteS1o/b21lcGFnZS1hdGhs/ZXRpY3MuanBn"
+        alt=""
+      class="slider"
+      />
+      <img
+        src="https://imgs.search.brave.com/DFCF2PwMxAwBDoMGeOzasQOeyqkWZZA77oE4MEUqu1g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1nYWNhZGVteS5j/b20vc2l0ZXMvZGVm/YXVsdC9maWxlcy9p/bWctYnMtZm9vdGJh/bGwtY29sbGVnZS1w/bGFjZW1lbnQtc2ln/bmluZy1kYXkuanBn"
+        alt=""
+        class="slider"
+      />
+    </div>
+    <div class="boss">
+      <button id="button1" onclick="bot1()">previous</button>
+    <button id="button1" onclick="bot2()">next</button>
+    </div>
+     
+    <script>
+      let box = 0;
+
+      let box1 = document.getElementsByClassName(".slider")
+
+        box1.foreach((slider ,indexNumber)=>{
+          indexNumber.style.left = `-${box*100}%`
+        })
+
+      function bot1() {
+     
+      }
+      function bot2() {
+      }
+    </script>
+  </body>
+</html>

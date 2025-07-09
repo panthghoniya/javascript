@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Chandigarh</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 40%, #ffb347 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(0,0,0,0.25);
+            border-radius: 32px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+            padding: 32px 24px 24px 24px;
+            width: 350px;
+            max-width: 95vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .search-bar-wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.15);
+            border-radius: 25px;
+            padding: 6px 16px;
+            margin-bottom: 24px;
+        }
+        .search-bar {
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #fff;
+            font-size: 17px;
+            width: 100%;
+            padding: 8px 0;
+        }
+        .search-icon {
+            font-size: 20px;
+            margin-right: 8px;
+            color: #fff;
+            opacity: 0.8;
+        }
+        .city {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin: 8px 0 0 0;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .weather-icon {
+            font-size: 3.5rem;
+            margin: 10px 0 0 0;
+        }
+        .temperature {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin: 8px 0 0 0;
+            letter-spacing: 1px;
+        }
+        .temp-range {
+            font-size: 1.1rem;
+            color: #ffe7b2;
+            margin-top: 2px;
+        }
+        .description {
+            font-size: 1.1rem;
+            margin: 12px 0 18px 0;
+            color: #ffe7b2;
+            letter-spacing: 0.5px;
+        }
+        .forecast-bar {
+            background: rgba(255,255,255,0.10);
+            border-radius: 18px;
+            padding: 10px 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 18px;
+            box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
+        }
+        .day {
+            flex: 1;
+            text-align: center;
+            color: #fff;
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .day .icon {
+            font-size: 1.7rem;
+            margin: 2px 0;
+        }
+        .day .temp-range {
+            font-size: 0.95rem;
+            color: #ffe7b2;
+        }
+        @media (max-width: 400px) {
+            .container {
+                padding: 16px 4px 12px 4px;
+            }
+            .forecast-bar {
+                padding: 6px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-bar-wrapper">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" class="search-bar" placeholder="Search for a city..." oninput="inp()" id="input">
+        </div>
+        <div class="city">
+            Chandigarh
+        </div>
+        <div class="weather-icon">⛈️</div>
+        <div class="temperature">
+            16°C
+        </div>
+        <div class="temp-range">
+            6° - 22°
+        </div>
+        <div class="description">
+            Scattered Thundershowers
+        </div>
+        <div class="forecast-bar">
+            <div class="day">
+                <div>Mon</div>
+                <div class="icon">🌦️</div>
+                <div class="temp-range">12° - 20°</div>
+            </div>
+            <div class="day">
+                <div>Tue</div>
+                <div class="icon">⛅</div>
+                <div class="temp-range">14° - 21°</div>
+            </div>
+            <div class="day">
+                <div>Wed</div>
+                <div class="icon">🌩️</div>
+                <div class="temp-range">15° - 22°</div>
+            </div>
+            <div class="day">
+                <div>Thu</div>
+                <div class="icon">🌧️</div>
+                <div class="temp-range">13° - 19°</div>
+            </div>
+            <div class="day">
+                <div>Fri</div>
+                <div class="icon">🌤️</div>
+                <div class="temp-range">11° - 18°</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    fetch(`http://api.weatherapi.com/v1/current.json?key=a278009ea2414b00919135709252606&q=${}&aqi=no`)
+    .then((req)=>req.json())
+    .then((res)=>{
+        function inp(){
+            let input = document.getElementById("")
+        }
+       
+    })
+</script>
+</html>
